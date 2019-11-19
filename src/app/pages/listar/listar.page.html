@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dog API</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label>Breed: </ion-label>
+  <ion-select placeholder="Select One" [(ngModel)]="breedSelected"
+      (ionChange)="loadImages()">
+    <ion-select-option *ngFor="let b of breedsList" 
+                        [value]="b">{{ b }}</ion-select-option>    
+  </ion-select>
+
+  <ion-list *ngFor="let bi of breedImages">
+    <ion-item>
+      <ion-img [src]="bi"></ion-img>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
